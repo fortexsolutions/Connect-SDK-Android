@@ -2,6 +2,8 @@ jdk:
 - openjdk17
 
 before_install:
+  - rm -rf .git/modules/core core
+  - git submodule sync --recursive
   - git submodule update --init --recursive
 
 install:
